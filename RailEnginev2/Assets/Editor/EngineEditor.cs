@@ -29,8 +29,14 @@ public class EngineEditor :  Editor
 		SerializedProperty effectsArray = serializedObject.FindProperty ("effects");
 		SerializedProperty facingsArray = serializedObject.FindProperty ("facings");
 
-		EditorGUILayout.PropertyField(movementsArray);
 
+
+        if(GUILayout.Button("Editor"))
+        {
+            EngineWindowEditor.Init();
+        }
+
+		EditorGUILayout.PropertyField(movementsArray);
 		if (movementsArray.isExpanded)
         {
             //EditorGUILayout.PropertyField(waypointsArray.arraySize)

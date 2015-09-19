@@ -295,6 +295,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: effects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 489278, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -363,6 +375,62 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 871972393}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[1].movementTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[1].moveType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[2].movementTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[3].movementTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[3].moveType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[4].movementTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[4].moveType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[5].movementTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[6].movementTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[6].moveType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[6].showInEditor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: effects.Array.data[0].showInEditor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[0].showInEditor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[0].showInEditor
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11401082, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
     - {fileID: 11423432, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
