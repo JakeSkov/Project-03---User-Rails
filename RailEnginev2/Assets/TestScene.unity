@@ -301,11 +301,47 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
       propertyPath: facings.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
       propertyPath: movements.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[0].targets.Array.size
+      value: 13121
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[1].targets.Array.size
+      value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].targets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[0].lockTimes.Array.size
+      value: 13121
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[1].lockTimes.Array.size
+      value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].lockTimes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[0].rotationSpeed.Array.size
+      value: 26242
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[1].rotationSpeed.Array.size
+      value: 156
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].rotationSpeed.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 489278, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
       propertyPath: m_LocalPosition.x
@@ -421,15 +457,111 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
       propertyPath: effects.Array.data[0].showInEditor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
       propertyPath: facings.Array.data[0].showInEditor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
       propertyPath: movements.Array.data[0].showInEditor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: effects.Array.data[0].effectType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: effects.Array.data[0].effectTime
+      value: 3.14159012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: effects.Array.data[0].fadeInTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: effects.Array.data[0].fadeOutTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: effects.Array.data[0].imageScale
+      value: 999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: effects.Array.data[0].magnitude
+      value: 2342342
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: movements.Array.data[0].moveType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[1].showInEditor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[1].facingType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[0].facingType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].facingType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].showInEditor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].targetSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].rotationSpeed.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].lockTimes.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].lockTimes.Array.data[1]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].lockTimes.Array.data[2]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].lockTimes.Array.data[3]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].lockTimes.Array.data[4]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].rotationSpeed.Array.data[1]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].rotationSpeed.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].rotationSpeed.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].rotationSpeed.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485958, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}
+      propertyPath: facings.Array.data[2].rotationSpeed.Array.data[5]
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11401082, guid: 67fe3e265aae01b4b8b434829c9baebe, type: 2}

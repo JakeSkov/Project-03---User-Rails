@@ -14,6 +14,7 @@ public class MovementEditorDrawer : PropertyDrawer
     float extraHeight = 60f;
     float displaySize = 20f;
     float numDisplays = 0f;
+
     //int shouldSolidMove = 0;
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

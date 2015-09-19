@@ -46,13 +46,13 @@ public class EngineEditor :  Editor
             {
 				SerializedProperty showInEditor = movementsArray.GetArrayElementAtIndex(i).FindPropertyRelative("showInEditor");
 
-                showInEditor.boolValue = EditorGUILayout.Foldout(showInEditor.boolValue, "Movement " + ( i + 1 ));
+                //showInEditor.boolValue = EditorGUILayout.Foldout(showInEditor.boolValue, "Movement " + ( i + 1 ));
 
-                if (showInEditor.boolValue)
-                {
+                //if (showInEditor.boolValue)
+                //{
                     //EditorGUILayout.LabelField("Movement " + (i + 1));
-					EditorGUILayout.PropertyField(movementsArray.GetArrayElementAtIndex(i));
-                }
+                    EditorGUILayout.PropertyField(movementsArray.GetArrayElementAtIndex(i));
+                //}
             }
             EditorGUI.indentLevel--;
         }
