@@ -11,7 +11,7 @@ public class MovementEditorDrawer : PropertyDrawer
 {
     bool movementShow = false;
     ScriptMovements waypointScript;
-    float extraHeight = 60f;
+    float extraHeight = 65f;
     float displaySize = 20f;
     float numDisplays = 0f;
 

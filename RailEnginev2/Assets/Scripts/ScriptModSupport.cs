@@ -288,24 +288,30 @@ public class ScriptModSupport : MonoBehaviour
                     }
                     inputLine = reader.ReadLine();
                 }
-                player.movements = new ScriptMovements[tempMovements.Count];
-                for (int i = 0; i < tempMovements.Count; i++)
-                {
-                    player.movements[i] = tempMovements[i];
-                }
-                player.effects = new ScriptEffects[tempEffects.Count];
-                for (int i = 0; i < tempEffects.Count; i++)
-                {
-                    player.effects[i] = tempEffects[i];
-                }
-                player.facings = new ScriptFacings[tempFacings.Count];
-				for (int i = 0; i < tempFacings.Count; i++)
-                {
-                    player.facings[i] = tempFacings[i];
-					Debug.Log ("add facing " + tempFacings[i].facingType);
-                }
-				Debug.Log ("last facing " + player.facings[player.facings.Length - 1]);
-				Debug.Log ("last facing list type " + tempFacings[tempFacings.Count - 1].facingType);
+
+                //@mike
+                player.movements = tempMovements;
+                player.facings = tempFacings;
+                player.effects = tempEffects;
+
+                //player.movements = new ScriptMovements[tempMovements.Count];
+                //for (int i = 0; i < tempMovements.Count; i++)
+                //{
+                //    player.movements[i] = tempMovements[i];
+                //}
+                //player.effects = new ScriptEffects[tempEffects.Count];
+                //for (int i = 0; i < tempEffects.Count; i++)
+                //{
+                //    player.effects[i] = tempEffects[i];
+                //}
+                //player.facings = new ScriptFacings[tempFacings.Count];
+                //for (int i = 0; i < tempFacings.Count; i++)
+                //{
+                //    player.facings[i] = tempFacings[i];
+                //    Debug.Log ("add facing " + tempFacings[i].facingType);
+                //}
+                //Debug.Log ("last facing " + player.facings[player.facings.Length - 1]);
+                //Debug.Log ("last facing list type " + tempFacings[tempFacings.Count - 1].facingType);
 			}
         }
     }

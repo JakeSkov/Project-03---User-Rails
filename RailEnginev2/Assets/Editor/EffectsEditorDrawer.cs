@@ -2,12 +2,16 @@
 using System.Collections;
 using UnityEditor;
 
+/// <summary>
+/// @author Mike Dobson
+/// </summary>
+
 [CustomPropertyDrawer(typeof(ScriptEffects))]
 public class EffectsEditorDrawer : PropertyDrawer {
 
     bool movementShow = false;
     ScriptMovements waypointScript;
-    float extraHeight = 60f;
+    float extraHeight = 65f;
     float displaySize = 20f;
     float numDisplays = 0f;
 

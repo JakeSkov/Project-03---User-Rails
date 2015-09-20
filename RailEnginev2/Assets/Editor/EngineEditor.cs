@@ -33,73 +33,74 @@ public class EngineEditor :  Editor
 
         if(GUILayout.Button("Editor"))
         {
-            EngineWindowEditor.Init();
+            EngineWindowEditor window = (EngineWindowEditor)EditorWindow.GetWindow(typeof(EngineWindowEditor));
+            window.Show();
         }
 
-		EditorGUILayout.PropertyField(movementsArray);
-		if (movementsArray.isExpanded)
-        {
-            //EditorGUILayout.PropertyField(waypointsArray.arraySize)
-			EditorGUILayout.PropertyField(movementsArray.FindPropertyRelative("Array.size"));
-            EditorGUI.indentLevel++;
-			for (int i = 0; i < movementsArray.arraySize; i++)
-            {
-				SerializedProperty showInEditor = movementsArray.GetArrayElementAtIndex(i).FindPropertyRelative("showInEditor");
+        //EditorGUILayout.PropertyField(movementsArray);
+        //if (movementsArray.isExpanded)
+        //{
+        //    //EditorGUILayout.PropertyField(waypointsArray.arraySize)
+        //    EditorGUILayout.PropertyField(movementsArray.FindPropertyRelative("Array.size"));
+        //    EditorGUI.indentLevel++;
+        //    for (int i = 0; i < movementsArray.arraySize; i++)
+        //    {
+        //        SerializedProperty showInEditor = movementsArray.GetArrayElementAtIndex(i).FindPropertyRelative("showInEditor");
 
-                //showInEditor.boolValue = EditorGUILayout.Foldout(showInEditor.boolValue, "Movement " + ( i + 1 ));
+        //        //showInEditor.boolValue = EditorGUILayout.Foldout(showInEditor.boolValue, "Movement " + ( i + 1 ));
 
-                //if (showInEditor.boolValue)
-                //{
-                    //EditorGUILayout.LabelField("Movement " + (i + 1));
-                    EditorGUILayout.PropertyField(movementsArray.GetArrayElementAtIndex(i));
-                //}
-            }
-            EditorGUI.indentLevel--;
-        }
+        //        //if (showInEditor.boolValue)
+        //        //{
+        //            //EditorGUILayout.LabelField("Movement " + (i + 1));
+        //            EditorGUILayout.PropertyField(movementsArray.GetArrayElementAtIndex(i));
+        //        //}
+        //    }
+        //    EditorGUI.indentLevel--;
+        //}
 
-		EditorGUILayout.PropertyField(effectsArray);
+        //EditorGUILayout.PropertyField(effectsArray);
 		
-		if (effectsArray.isExpanded)
-		{
-			//EditorGUILayout.PropertyField(waypointsArray.arraySize)
-			EditorGUILayout.PropertyField(effectsArray.FindPropertyRelative("Array.size"));
-			EditorGUI.indentLevel++;
-			for (int i = 0; i < effectsArray.arraySize; i++)
-			{
-				SerializedProperty showInEditor = effectsArray.GetArrayElementAtIndex(i).FindPropertyRelative("showInEditor");
+        //if (effectsArray.isExpanded)
+        //{
+        //    //EditorGUILayout.PropertyField(waypointsArray.arraySize)
+        //    EditorGUILayout.PropertyField(effectsArray.FindPropertyRelative("Array.size"));
+        //    EditorGUI.indentLevel++;
+        //    for (int i = 0; i < effectsArray.arraySize; i++)
+        //    {
+        //        SerializedProperty showInEditor = effectsArray.GetArrayElementAtIndex(i).FindPropertyRelative("showInEditor");
 				
-				showInEditor.boolValue = EditorGUILayout.Foldout(showInEditor.boolValue, "Effect " + ( i + 1 ));
+        //        showInEditor.boolValue = EditorGUILayout.Foldout(showInEditor.boolValue, "Effect " + ( i + 1 ));
 				
-				if (showInEditor.boolValue)
-				{
-					//EditorGUILayout.LabelField("Movement " + (i + 1));
-					EditorGUILayout.PropertyField(effectsArray.GetArrayElementAtIndex(i));
-				}
-			}
-			EditorGUI.indentLevel--;
-		}
+        //        if (showInEditor.boolValue)
+        //        {
+        //            //EditorGUILayout.LabelField("Movement " + (i + 1));
+        //            EditorGUILayout.PropertyField(effectsArray.GetArrayElementAtIndex(i));
+        //        }
+        //    }
+        //    EditorGUI.indentLevel--;
+        //}
 
-		EditorGUILayout.PropertyField(facingsArray);
+        //EditorGUILayout.PropertyField(facingsArray);
 		
-		if (facingsArray.isExpanded)
-		{
-			//EditorGUILayout.PropertyField(waypointsArray.arraySize)
-			EditorGUILayout.PropertyField(facingsArray.FindPropertyRelative("Array.size"));
-			EditorGUI.indentLevel++;
-			for (int i = 0; i < facingsArray.arraySize; i++)
-			{
-				SerializedProperty showInEditor = facingsArray.GetArrayElementAtIndex(i).FindPropertyRelative("showInEditor");
+        //if (facingsArray.isExpanded)
+        //{
+        //    //EditorGUILayout.PropertyField(waypointsArray.arraySize)
+        //    EditorGUILayout.PropertyField(facingsArray.FindPropertyRelative("Array.size"));
+        //    EditorGUI.indentLevel++;
+        //    for (int i = 0; i < facingsArray.arraySize; i++)
+        //    {
+        //        SerializedProperty showInEditor = facingsArray.GetArrayElementAtIndex(i).FindPropertyRelative("showInEditor");
 				
-				showInEditor.boolValue = EditorGUILayout.Foldout(showInEditor.boolValue, "Facings " + ( i + 1 ));
+        //        showInEditor.boolValue = EditorGUILayout.Foldout(showInEditor.boolValue, "Facings " + ( i + 1 ));
 				
-				if (showInEditor.boolValue)
-				{
-					//EditorGUILayout.LabelField("Movement " + (i + 1));
-					EditorGUILayout.PropertyField(facingsArray.GetArrayElementAtIndex(i));
-				}
-			}
-			EditorGUI.indentLevel--;
-		}
+        //        if (showInEditor.boolValue)
+        //        {
+        //            //EditorGUILayout.LabelField("Movement " + (i + 1));
+        //            EditorGUILayout.PropertyField(facingsArray.GetArrayElementAtIndex(i));
+        //        }
+        //    }
+        //    EditorGUI.indentLevel--;
+        //}
         //--------------------------------
 
 
