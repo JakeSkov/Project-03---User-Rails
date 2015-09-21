@@ -38,7 +38,7 @@ public class MovementEditorDrawer : PropertyDrawer
             numDisplays += 1;
 
             //target display block
-            if (movementTypes.enumValueIndex == (int)MovementTypes.MOVE)
+            if (movementTypes.enumValueIndex == (int)MovementTypes.STRAIGHT)
             {
                 SerializedProperty endWaypoint = property.FindPropertyRelative("endWaypoint");
                 Rect endWaypointDisplay = new Rect(position.x, position.y + displaySize * numDisplays, position.width, 15f);

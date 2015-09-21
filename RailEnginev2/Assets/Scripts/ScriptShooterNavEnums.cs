@@ -15,7 +15,7 @@ public enum WaypointType
 public enum MovementTypes
 {
     WAIT,
-    MOVE,
+    STRAIGHT,
     BEZIER
 };
 

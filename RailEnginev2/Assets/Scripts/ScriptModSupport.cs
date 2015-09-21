@@ -93,9 +93,9 @@ public class ScriptModSupport : MonoBehaviour
                         string[] words = keywords[1].Split(' ');
                         switch ((MovementTypes)System.Enum.Parse(typeof(MovementTypes), words[0].ToUpper()))
                         {
-                            case MovementTypes.MOVE:
+                            case MovementTypes.STRAIGHT:
                                 tempMove = new ScriptMovements();
-                                tempMove.moveType = MovementTypes.MOVE;
+                                tempMove.moveType = MovementTypes.STRAIGHT;
                                 tempMove.movementTime = (float)System.Convert.ToDouble(words[1]);
                                 coords = words[2].Split(',');
                                 target = new Vector3(System.Convert.ToSingle(coords[0]),

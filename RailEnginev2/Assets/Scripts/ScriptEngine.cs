@@ -43,7 +43,7 @@ public class ScriptEngine : MonoBehaviour {
 			Debug.Log(move.moveType);
 			switch(move.moveType)
 			{
-				case MovementTypes.MOVE:
+				case MovementTypes.STRAIGHT:
                     if (move.endWaypoint != null && move.movementTime > 0)
                     {
                         //Do the movement coroutine with the help of the movement script
@@ -277,7 +277,7 @@ public class ScriptEngine : MonoBehaviour {
         {
             switch(move.moveType)
             {
-                case MovementTypes.MOVE:
+                case MovementTypes.STRAIGHT:
                     if (move.endWaypoint != null && move.movementTime > 0)
                     {
                         Gizmos.color = Color.blue;
