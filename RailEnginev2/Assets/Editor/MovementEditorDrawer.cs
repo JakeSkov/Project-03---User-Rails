@@ -11,9 +11,10 @@ public class MovementEditorDrawer : PropertyDrawer
 {
     bool movementShow = false;
     ScriptMovements waypointScript;
-    float extraHeight = 60f;
+    float extraHeight = 65f;
     float displaySize = 20f;
     float numDisplays = 0f;
+
     //int shouldSolidMove = 0;
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -37,7 +38,7 @@ public class MovementEditorDrawer : PropertyDrawer
             numDisplays += 1;
 
             //target display block
-            if (movementTypes.enumValueIndex == (int)MovementTypes.MOVE)
+            if (movementTypes.enumValueIndex == (int)MovementTypes.STRAIGHT)
             {
                 SerializedProperty endWaypoint = property.FindPropertyRelative("endWaypoint");
                 Rect endWaypointDisplay = new Rect(position.x, position.y + displaySize * numDisplays, position.width, 15f);

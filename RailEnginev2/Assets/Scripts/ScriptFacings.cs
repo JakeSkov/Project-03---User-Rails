@@ -16,4 +16,9 @@ public class ScriptFacings
 	public float[] lockTimes;
 
     public float facingTime;
+
+    //inspector variables only
+    public bool showInEditor = false;
+    public int targetSize;
+
 }
