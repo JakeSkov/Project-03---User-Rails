@@ -22,4 +22,6 @@ public class ScriptEffects
 
     //variables for camera shake
     public float magnitude;
+
+    public bool showInEditor = false;
 }

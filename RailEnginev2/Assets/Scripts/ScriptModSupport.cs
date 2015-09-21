@@ -93,9 +93,9 @@ public class ScriptModSupport : MonoBehaviour
                         string[] words = keywords[1].Split(' ');
                         switch ((MovementTypes)System.Enum.Parse(typeof(MovementTypes), words[0].ToUpper()))
                         {
-                            case MovementTypes.MOVE:
+                            case MovementTypes.STRAIGHT:
                                 tempMove = new ScriptMovements();
-                                tempMove.moveType = MovementTypes.MOVE;
+                                tempMove.moveType = MovementTypes.STRAIGHT;
                                 tempMove.movementTime = (float)System.Convert.ToDouble(words[1]);
                                 coords = words[2].Split(',');
                                 target = new Vector3(System.Convert.ToSingle(coords[0]),
@@ -288,24 +288,30 @@ public class ScriptModSupport : MonoBehaviour
                     }
                     inputLine = reader.ReadLine();
                 }
-                player.movements = new ScriptMovements[tempMovements.Count];
-                for (int i = 0; i < tempMovements.Count; i++)
-                {
-                    player.movements[i] = tempMovements[i];
-                }
-                player.effects = new ScriptEffects[tempEffects.Count];
-                for (int i = 0; i < tempEffects.Count; i++)
-                {
-                    player.effects[i] = tempEffects[i];
-                }
-                player.facings = new ScriptFacings[tempFacings.Count];
-				for (int i = 0; i < tempFacings.Count; i++)
-                {
-                    player.facings[i] = tempFacings[i];
-					Debug.Log ("add facing " + tempFacings[i].facingType);
-                }
-				Debug.Log ("last facing " + player.facings[player.facings.Length - 1]);
-				Debug.Log ("last facing list type " + tempFacings[tempFacings.Count - 1].facingType);
+
+                //@mike
+                player.movements = tempMovements;
+                player.facings = tempFacings;
+                player.effects = tempEffects;
+
+                //player.movements = new ScriptMovements[tempMovements.Count];
+                //for (int i = 0; i < tempMovements.Count; i++)
+                //{
+                //    player.movements[i] = tempMovements[i];
+                //}
+                //player.effects = new ScriptEffects[tempEffects.Count];
+                //for (int i = 0; i < tempEffects.Count; i++)
+                //{
+                //    player.effects[i] = tempEffects[i];
+                //}
+                //player.facings = new ScriptFacings[tempFacings.Count];
+                //for (int i = 0; i < tempFacings.Count; i++)
+                //{
+                //    player.facings[i] = tempFacings[i];
+                //    Debug.Log ("add facing " + tempFacings[i].facingType);
+                //}
+                //Debug.Log ("last facing " + player.facings[player.facings.Length - 1]);
+                //Debug.Log ("last facing list type " + tempFacings[tempFacings.Count - 1].facingType);
 			}
         }
     }
