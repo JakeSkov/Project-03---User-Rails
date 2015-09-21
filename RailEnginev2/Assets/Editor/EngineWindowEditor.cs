@@ -10,6 +10,8 @@ using System.Linq;
 
 public class EngineWindowEditor : EditorWindow {
 
+
+
     List<ScriptMovements> movements;
     List<ScriptEffects> effects;
     List<ScriptFacings> facings;
@@ -42,6 +44,10 @@ public class EngineWindowEditor : EditorWindow {
             movements.Add(new ScriptMovements());
             movementFocus = 0;
         }
+
+//		Debug.Log ("~~~ON FOCUS MOVEMENT COUNT~~~\n" +
+//		           "\tENGINE: " + engine.movements.Count +
+//		           "\t\tWINDOW: " + movements.Count);
     }
 
     void OnGUI()
@@ -56,9 +62,12 @@ public class EngineWindowEditor : EditorWindow {
         GUI.color = Color.white;
 
         //Error Block
-        //effectFocus = 0;
-        //movementFocus = 0;
-        //facingFocus = 0;
+		if (movementFocus >= movements.Count)
+			movementFocus = 0;
+		if (effectFocus >= effects.Count)
+			effectFocus = 0;
+		if (facingFocus >= facings.Count)
+			facingFocus = 0;
 
         //----------------------------------
         //Display block for movement
@@ -139,7 +148,12 @@ public class EngineWindowEditor : EditorWindow {
         offsetX += 15f;
         windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
         offsetX += 70f;
-        if(GUI.Button(windowDisplay,"Prev"))
+
+		GUIStyle miniRight = new GUIStyle (EditorStyles.miniButtonRight);
+		GUIStyle miniLeft = new GUIStyle (EditorStyles.miniButtonLeft);
+		GUIStyle miniMid = new GUIStyle (EditorStyles.miniButtonMid);
+
+        if(GUI.Button(windowDisplay,"Prev", miniLeft))
         {
             if (movementFocus > 0)
             {
@@ -148,7 +162,7 @@ public class EngineWindowEditor : EditorWindow {
         }
         windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
         offsetX += 70f;
-        if(GUI.Button(windowDisplay, "Add"))
+        if(GUI.Button(windowDisplay, "Add", miniMid))
         {
             movements.Insert(movementFocus + 1, new ScriptMovements());
             movementFocus++;
@@ -156,7 +170,7 @@ public class EngineWindowEditor : EditorWindow {
         windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
         offsetX -= 105f;
         offsetY += 30f;
-        if(GUI.Button(windowDisplay, "Next"))
+        if(GUI.Button(windowDisplay, "Next", miniRight))
         {
             if (movementFocus < movements.Count - 1)
             {
@@ -362,7 +376,6 @@ public class EngineWindowEditor : EditorWindow {
             }
         }
         GUI.color = Color.white;
-
     }
 
     void OnLostFocus()
@@ -375,6 +388,9 @@ public class EngineWindowEditor : EditorWindow {
         engine.movements = movements;
         engine.effects = effects;
         engine.facings = facings;
+//		Debug.Log ("~~~LOST FOCUS MOVEMENT COUNT~~~\n" +
+//			"\tENGINE: " + engine.movements.Count +
+//		           "\t\tWINDOW: " + movements.Count);
     }
 
 }
