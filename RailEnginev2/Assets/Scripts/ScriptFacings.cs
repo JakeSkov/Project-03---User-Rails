@@ -19,6 +19,6 @@ public class ScriptFacings
 
     //inspector variables only
     public bool showInEditor = false;
-    public int targetSize;
+    public int targetSize = 0;
 
 }

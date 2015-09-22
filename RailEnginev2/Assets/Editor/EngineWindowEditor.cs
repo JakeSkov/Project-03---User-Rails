@@ -153,7 +153,7 @@ public class EngineWindowEditor : EditorWindow {
                 windowDisplay = new Rect(offsetX, offsetY, 80f, DISPLAY_HEIGHT);
                 offsetX += 80f;
                 EditorGUI.LabelField(windowDisplay, "End Target");
-                windowDisplay = new Rect(offsetX, offsetY, 135f, DISPLAY_HEIGHT);
+                windowDisplay = new Rect(offsetX, offsetY, 130f, DISPLAY_HEIGHT);
                 offsetY = 120f;
                 offsetX = 15f;
                 movements[movementFocus].endWaypoint = (GameObject) EditorGUI.ObjectField(windowDisplay, GUIContent.none, movements[movementFocus].endWaypoint, typeof(GameObject));
@@ -460,6 +460,18 @@ public class EngineWindowEditor : EditorWindow {
         {
             case FacingTypes.LOOKAT:
                 //target
+                if(facings[facingFocus].targets.Length != 1)
+                {
+                    facings[facingFocus].targets = new GameObject[1];
+                }
+                if(facings[facingFocus].lockTimes.Length != 1)
+                {
+                    facings[facingFocus].lockTimes = new float[1];
+                }
+                if(facings[facingFocus].rotationSpeed.Length != 2)
+                {
+                    facings[facingFocus].rotationSpeed = new float[2];
+                }
                 windowDisplay = new Rect(offsetX, offsetY, 100f, DISPLAY_HEIGHT);
                 offsetX += 90f;
                 EditorGUI.LabelField(windowDisplay, "Look At Target");
@@ -495,7 +507,7 @@ public class EngineWindowEditor : EditorWindow {
                 EditorGUI.LabelField(windowDisplay, "Rotate to origin over");
                 windowDisplay = new Rect(offsetX, offsetY, 30f, DISPLAY_HEIGHT);
                 offsetX += 30f;
-                facings[facingFocus].lockTimes[1] = EditorGUI.FloatField(windowDisplay, facings[facingFocus].lockTimes[1]);
+                facings[facingFocus].rotationSpeed[1] = EditorGUI.FloatField(windowDisplay, facings[facingFocus].rotationSpeed[1]);
                 windowDisplay = new Rect(offsetX, offsetY, 30f, DISPLAY_HEIGHT);
                 offsetX = 535;
                 offsetY += DISPLAY_DIF;
@@ -504,7 +516,53 @@ public class EngineWindowEditor : EditorWindow {
                 break;
             case FacingTypes.LOOKCHAIN:
                 //amount of targets
-                //window call
+                windowDisplay = new Rect(offsetX, offsetY, 150f, DISPLAY_HEIGHT);
+                offsetX += 150f;
+                EditorGUI.LabelField(windowDisplay, "Amount of Targets");
+                windowDisplay = new Rect(offsetX, offsetY, 50f, DISPLAY_HEIGHT);
+                offsetX = 535f;
+                offsetY += DISPLAY_DIF;
+                facings[facingFocus].targetSize = EditorGUI.IntField(windowDisplay, facings[facingFocus].targetSize);
+                if(facings[facingFocus].targets.Length != facings[facingFocus].targetSize)
+                {
+                    facings[facingFocus].targets = new GameObject[facings[facingFocus].targetSize];
+                }
+                if(facings[facingFocus].lockTimes.Length != facings[facingFocus].targetSize)
+                {
+                    facings[facingFocus].lockTimes = new float[facings[facingFocus].targetSize];
+                }
+                Debug.Log("target size " + facings[facingFocus].targetSize);
+                Debug.Log("length before " + facings[facingFocus].rotationSpeed.Length);
+                if(facings[facingFocus].rotationSpeed.Length != facings[facingFocus].targetSize + 1)
+                {
+                    facings[facingFocus].rotationSpeed = new float[facings[facingFocus].targetSize + 1];
+                    Debug.Log("length after " + facings[facingFocus].rotationSpeed.Length);
+                }
+                //offsetX += 5f;
+                //Vector2 lookChainPoint1 = new Vector2(437, 70);
+                //Vector2 lookChainPoint2 = new Vector2(637, 70);
+                //Drawing.DrawLine(lookChainPoint1, lookChainPoint2, Color.black, 1f, true);
+                //lookChainPoint1 = new Vector2(537, 71);
+                //lookChainPoint2 = new Vector2(537, 150);
+                //Drawing.DrawLine(lookChainPoint1, lookChainPoint2, Color.black, 1f, true);
+                //lookChainPoint1 = new Vector2(437, 147);
+                //lookChainPoint2 = new Vector2(637, 147);
+                //Drawing.DrawLine(lookChainPoint1, lookChainPoint2, Color.black, 1f, true);
+                //lookChainPoint1 = new Vector2(737, 71);
+                //lookChainPoint2 = new Vector2(737, 150);
+                //Drawing.DrawLine(lookChainPoint1, lookChainPoint2, Color.black, 1f, true);
+                //windowDisplay = new Rect(offsetX, offsetY, 100, DISPLAY_HEIGHT);
+                //offsetX += 100f;
+                //EditorGUI.LabelField(windowDisplay, "Look at Target");
+                //windowDisplay = new Rect(offsetX, offsetY, 70, DISPLAY_HEIGHT);
+                //offsetY += DISPLAY_DIF;
+                //offsetX = 540f;
+                
+                windowDisplay = new Rect(offsetX, offsetY, ELEMENT_DISPLAY, DISPLAY_HEIGHT);
+                if(GUI.Button(windowDisplay, "Edit Targets"))
+                {
+                    LookChainWindowEditor.Init(facingFocus);
+                }
                 offsetY = 120f;
                 break;
             case FacingTypes.FREELOOK:
@@ -521,8 +579,8 @@ public class EngineWindowEditor : EditorWindow {
                 break;
 
         }
-        //Effects Buttons Display
-        offsetY += DISPLAY_DIF;
+        //Facings Buttons Display
+        offsetY = 140;
         offsetX = 570f;
         windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
         offsetX += 40f;

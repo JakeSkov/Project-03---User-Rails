@@ -9,13 +9,29 @@ using System.Collections.Generic;
 
 public class LookChainWindowEditor : EditorWindow {
 
-    public static Object selectedObject;
-    SerializedProperty target;
+    float[] lockTimes;
+    float[] rotationSpeed;
+    GameObject[] targets;
 
-    public static void Show(SerializedProperty pProperty)
+    ScriptEngine engine;
+
+    static int facingFocus = 0;
+
+
+
+    public static void Init(int pFacingFocus)
     {
-        EditorWindow window = EditorWindow.GetWindow(typeof(LookChainWindowEditor));
-        (window as LookChainWindowEditor).target = pProperty;
+        LookChainWindowEditor window = (LookChainWindowEditor)EditorWindow.GetWindow(typeof(LookChainWindowEditor));
+        window.Show();
+        facingFocus = pFacingFocus;
+    }
+
+    void OnFocus()
+    {
+        engine = GameObject.FindWithTag("Player").GetComponent<ScriptEngine>();
+        lockTimes = engine.facings[facingFocus].lockTimes;
+        rotationSpeed = engine.facings[facingFocus].rotationSpeed;
+        targets = engine.facings[facingFocus].targets;
     }
 
     //on the editor Window
@@ -24,81 +40,60 @@ public class LookChainWindowEditor : EditorWindow {
         //minimum size for the display
         minSize = new Vector2(200, 200);
 
-        //serialize properties to edit
-        SerializedProperty targets = target.FindPropertyRelative("targets");
-        SerializedProperty rotationSpeed = target.FindPropertyRelative("rotationSpeed");
-        SerializedProperty lockTimes = target.FindPropertyRelative("lockTimes");
-        SerializedProperty targetSize = target.FindPropertyRelative("targetSize");
-
-        //initialize arrays to value needed
-        targets.arraySize = targetSize.intValue;
-        rotationSpeed.arraySize = targetSize.intValue + 1;
-        lockTimes.arraySize = targetSize.intValue;
-
         //local variables
-        Rect FacingDrawerDisplay;
-        float displayHeight = 16f;
-        float displayHeightDif = 18f;
+        Rect windowDisplay;
+        float displayHeight = 17f;
+        float displayHeightDif = 20f;
         float offsetX = 5;
         float offsetY = 5;
 
-        for(int i = 0; i < targetSize.intValue; i++)
+        for (int i = 0; i < targets.Length; i++ )
         {
-            //display block for look at
-            FacingDrawerDisplay = new Rect(offsetX, offsetY, 70f, displayHeight);
-            offsetX += 70f;
-            EditorGUI.LabelField(FacingDrawerDisplay, "Look at");
-            //units
-            FacingDrawerDisplay = new Rect(offsetX, offsetY, position.width, displayHeight);
-            offsetX = position.x;
+            windowDisplay = new Rect(offsetX, offsetY, 100f, displayHeight);
+            offsetX +=10;
             offsetY += displayHeightDif;
-            EditorGUI.ObjectField(FacingDrawerDisplay, targets.GetArrayElementAtIndex(i), GUIContent.none);
-
-            //display block for rotate time and lock time
-            //rotate over
-            FacingDrawerDisplay = new Rect(offsetX, offsetY, 160f, displayHeight);
-            offsetX += 145f;
-            EditorGUI.LabelField(FacingDrawerDisplay, "Rotate to target over");
-            //time
-            FacingDrawerDisplay = new Rect(offsetX, offsetY, 35f, displayHeight);
-            offsetX += 35f;
-            EditorGUI.PropertyField(FacingDrawerDisplay, rotationSpeed.GetArrayElementAtIndex(i), GUIContent.none);
-            //units
-            FacingDrawerDisplay = new Rect(offsetX, offsetY, 55f, displayHeight);
-            offsetX = position.x;
+            EditorGUI.LabelField(windowDisplay, "Target " + (i + 1));
+            windowDisplay = new Rect(offsetX, offsetY, 100f, displayHeight);
+            offsetX += 100f;
+            EditorGUI.LabelField(windowDisplay, "Look at Target");
+            windowDisplay = new Rect(offsetX, offsetY, 100f, displayHeight);
+            offsetX = 15f;
             offsetY += displayHeightDif;
-            EditorGUI.LabelField(FacingDrawerDisplay, "secs");
-
-            //Lock for
-            FacingDrawerDisplay = new Rect(offsetX, offsetY, 140f, displayHeight);
-            offsetX += 125f;
-            EditorGUI.LabelField(FacingDrawerDisplay, "Lock on target for");
-
-            //time
-            FacingDrawerDisplay = new Rect(offsetX, offsetY, 35f, displayHeight);
-            offsetX += 35f;
-            EditorGUI.PropertyField(FacingDrawerDisplay, lockTimes.GetArrayElementAtIndex(i), GUIContent.none);
-            //units
-            FacingDrawerDisplay = new Rect(offsetX, offsetY, 50f, displayHeight);
-            offsetX = position.x;
-            offsetY += displayHeightDif * 2;
-            EditorGUI.LabelField(FacingDrawerDisplay, "secs.");
+            targets[i] = (GameObject)EditorGUI.ObjectField(windowDisplay, targets[i], typeof(GameObject));
+            windowDisplay = new Rect(offsetX, offsetY, 150f, displayHeight);
+            offsetX += 150f;
+            EditorGUI.LabelField(windowDisplay, "Rotate to target over");
+            windowDisplay = new Rect(offsetX, offsetY, 50f, displayHeight);
+            offsetX += 50f;
+            rotationSpeed[i] = EditorGUI.FloatField(windowDisplay, rotationSpeed[i]);
+            windowDisplay = new Rect(offsetX, offsetY, 50f, displayHeight);
+            offsetX = 15f;
+            offsetY += displayHeightDif;
+            EditorGUI.LabelField(windowDisplay, "secs");
+            windowDisplay = new Rect(offsetX, offsetY, 150f, displayHeight);
+            offsetX += 150f;
+            EditorGUI.LabelField(windowDisplay, "Lock to target for");
+            windowDisplay = new Rect(offsetX, offsetY, 50f, displayHeight);
+            offsetX += 50f;
+            lockTimes[i] = EditorGUI.FloatField(windowDisplay, lockTimes[i]);
+            windowDisplay = new Rect(offsetX, offsetY, 50f, displayHeight);
+            offsetY += displayHeightDif;
+            offsetX = 5f;
+            EditorGUI.LabelField(windowDisplay, "secs");
         }
+        offsetY += displayHeightDif;
+        windowDisplay = new Rect(offsetX, offsetY, 155f, displayHeight);
+        offsetX += 155f;
+        EditorGUI.LabelField(windowDisplay, "Rotate back to origin over");
+        windowDisplay = new Rect(offsetX, offsetY, 50f, displayHeight);
+        offsetX += 50f;
+        rotationSpeed[rotationSpeed.Length - 1] = EditorGUI.FloatField(windowDisplay, rotationSpeed[rotationSpeed.Length - 1]);
+        windowDisplay = new Rect(offsetX, offsetY, 50f, displayHeight);
+        EditorGUI.LabelField(windowDisplay, "secs");
+    }
 
-        //display block for return time
-        //return for
-        FacingDrawerDisplay = new Rect(offsetX, offsetY, 190f, displayHeight);
-        offsetX += 175f;
-        EditorGUI.LabelField(FacingDrawerDisplay, "Rotate back to origin over");
-        //time
-        FacingDrawerDisplay = new Rect(offsetX, offsetY, 40f, displayHeight);
-        offsetX += 40f;
-        EditorGUI.PropertyField(FacingDrawerDisplay, rotationSpeed.GetArrayElementAtIndex(targetSize.intValue), GUIContent.none);
-        //units
-        FacingDrawerDisplay = new Rect(offsetX, offsetY, 65f, displayHeight);
-        offsetX = position.x;
-        EditorGUI.LabelField(FacingDrawerDisplay, "secs.");
+    void OnLostFocus()
+    {
 
-        target.serializedObject.ApplyModifiedProperties();
     }
 }
