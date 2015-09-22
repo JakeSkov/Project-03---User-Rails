@@ -38,7 +38,7 @@ public class LookChainWindowEditor : EditorWindow {
     void OnGUI()
     {
         //minimum size for the display
-        minSize = new Vector2(200, 200);
+        minSize = new Vector2(250, 300);
 
         //local variables
         Rect windowDisplay;
@@ -94,6 +94,8 @@ public class LookChainWindowEditor : EditorWindow {
 
     void OnLostFocus()
     {
-
+		engine.facings [facingFocus].lockTimes = lockTimes;
+		engine.facings [facingFocus].rotationSpeed = rotationSpeed;
+		engine.facings [facingFocus].targets = targets;
     }
 }
