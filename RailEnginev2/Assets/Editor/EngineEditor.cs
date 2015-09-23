@@ -29,7 +29,8 @@ public class EngineEditor :  Editor
 //		SerializedProperty effectsArray = serializedObject.FindProperty ("effects");
 //		SerializedProperty facingsArray = serializedObject.FindProperty ("facings");
 
-
+        //added by gipson to figure things out
+	    DrawDefaultInspector();
 
         if(GUILayout.Button("Editor"))
         {
