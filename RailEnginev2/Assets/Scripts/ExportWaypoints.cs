@@ -91,7 +91,12 @@ public class ExportWaypoints {
                     break;
                 case FacingTypes.LOOKAT:
                     //LOOKAT takes a look to time, a lock time, a look target, and a return time.
-                    nodeString += string.Format( "" );
+                    nodeString += string.Format( "LOOKAT {0} {1} {2},{3},{4} {5}", node.facingTime, node.lockTimes[0],
+                                                 node.targets[0].transform.position.x,
+                                                 node.targets[0].transform.position.y,
+                                                 node.targets[0].transform.position.z,
+                                                 node.facingTime);
+                    
                     break;
                 case FacingTypes.LOOKCHAIN:
                     //LOOKCHAIN takes two times per target, an unlimited number of targets, and a return time at the end.
@@ -123,6 +128,7 @@ public class ExportWaypoints {
                 case EffectTypes.SPLATTER:
                     //SPLATTER takes a stay time, a fade-in time, a fade-out time, and an image scale
                     nodeString += string.Format( "SPLATTER {0} {1} {2} {3}", node.effectTime, node.fadeInTime, node.fadeOutTime, node.imageScale );
+                    
                     break;
                 case EffectTypes.WAIT:
                     //WAIT takes just a time.
