@@ -259,7 +259,9 @@ public class ScriptEngine : MonoBehaviour {
 
     void OnDrawGizmos()
     {
-        Vector3 lineStarting = transform.position;
+        GameObject start = GameObject.FindGameObjectWithTag("Start");
+        Vector3 lineStarting = start.transform.position;
+        
         foreach(ScriptMovements move in movements)
         {
             switch(move.moveType)
