@@ -1150,6 +1150,14 @@ public class EngineWindowEditor : EditorWindow {
                 offsetY = 120f;
                 break;
             case FacingTypes.FREELOOK:
+                windowDisplay = new Rect(offsetX, offsetY, 130f, DISPLAY_HEIGHT);
+                offsetX += 130f;
+                EditorGUI.LabelField(windowDisplay, "Time for freelook");
+                windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
+                offsetX += 40f;
+                facings[facingFocus].facingTime = EditorGUI.FloatField(windowDisplay, facings[facingFocus].facingTime);
+                windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
+                EditorGUI.LabelField(windowDisplay, "secs");
                 offsetY = 120f;
                 break;
             case FacingTypes.WAIT:
