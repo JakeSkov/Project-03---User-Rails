@@ -86,28 +86,47 @@ public class ExportWaypoints {
             //Facings are FREELOOK, WAIT, LOOKAT, and LOOKCHAIN
             switch (node.facingType) {
                 case FacingTypes.FREELOOK:
+
                     //FREELOOK takes a time.
-                    nodeString += string.Format( "WAIT {0}", node.facingTime );
+                    nodeString += string.Format("WAIT {0}", node.facingTime);
                     break;
                 case FacingTypes.LOOKAT:
+
                     //LOOKAT takes a look to time, a lock time, a look target, and a return time.
-                    nodeString += string.Format( "LOOKAT {0} {1} {2},{3},{4} {5}", node.facingTime, node.lockTimes[0],
-                                                 node.targets[0].transform.position.x,
-                                                 node.targets[0].transform.position.y,
-                                                 node.targets[0].transform.position.z,
-                                                 node.facingTime);
-                    
+                    nodeString += string.Format("LOOKAT {0} {1} {2},{3},{4} {5}",
+                                                node.rotationSpeed[0],
+                                                node.lockTimes[0],
+                                                node.targets[0].transform.position.x,
+                                                node.targets[0].transform.position.y,
+                                                node.targets[0].transform.position.z,
+                                                node.rotationSpeed[1]);
+
                     break;
                 case FacingTypes.LOOKCHAIN:
+
                     //LOOKCHAIN takes two times per target, an unlimited number of targets, and a return time at the end.
-                    nodeString += string.Format( "" );
+                    nodeString += string.Format("LOOKCHAIN {0}", node.rotationSpeed[0]);
+
+                    int currTarget = 0;
+
+                    foreach (GameObject target in node.targets) {
+                        nodeString += string.Format(" {0} {1},{2},{3} {4}",
+                                                    node.lockTimes[currTarget],
+                                                    node.targets[currTarget].transform.position.x,
+                                                    node.targets[currTarget].transform.position.y,
+                                                    node.targets[currTarget].transform.position.z,
+                                                    node.rotationSpeed[currTarget]);
+
+                        currTarget++;
+                    }
+
                     break;
                 case FacingTypes.WAIT:
+
                     //WAIT takes just a time.
-                    nodeString += string.Format( "WAIT {0}", node.facingTime );
+                    nodeString += string.Format("WAIT {0}", node.facingTime);
                     break;
             }
-
 
             waypoints.Add(nodeString);
         }
@@ -116,23 +135,31 @@ public class ExportWaypoints {
             string nodeString = "E_";
 
             //Effects are SHAKE, SPLATTER, WAIT, and FADE
-            switch ( node.effectType ) {
+            switch (node.effectType) {
                 case EffectTypes.FADE:
+
                     //FADE takes a stay-blacked out time, a fade-to-black time, and a fade-back time
-                    nodeString += string.Format( "FADE {0} {1} {2}", node.effectTime, node.fadeOutTime, node.fadeInTime );
+                    nodeString += string.Format("FADE {0} {1} {2}", node.effectTime, node.fadeOutTime, node.fadeInTime);
                     break;
                 case EffectTypes.SHAKE:
+
                     //SHAKE takes an effect time and a magnitude.
-                    nodeString += string.Format( "SHAKE {0} {1}", node.effectTime, node.magnitude );
+                    nodeString += string.Format("SHAKE {0} {1}", node.effectTime, node.magnitude);
                     break;
                 case EffectTypes.SPLATTER:
+
                     //SPLATTER takes a stay time, a fade-in time, a fade-out time, and an image scale
-                    nodeString += string.Format( "SPLATTER {0} {1} {2} {3}", node.effectTime, node.fadeInTime, node.fadeOutTime, node.imageScale );
-                    
+                    nodeString += string.Format("SPLATTER {0} {1} {2} {3}",
+                                                node.effectTime,
+                                                node.fadeInTime,
+                                                node.fadeOutTime,
+                                                node.imageScale);
+
                     break;
                 case EffectTypes.WAIT:
+
                     //WAIT takes just a time.
-                    nodeString += string.Format( "WAIT {0}", node.effectTime);
+                    nodeString += string.Format("WAIT {0}", node.effectTime);
                     break;
             }
 
@@ -145,4 +172,3 @@ public class ExportWaypoints {
     }
 
 }
-
