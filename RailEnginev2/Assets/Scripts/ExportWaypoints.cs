@@ -115,9 +115,7 @@ public class ExportWaypoints {
                                                     node.targets[currTarget].transform.position.x,
                                                     node.targets[currTarget].transform.position.y,
                                                     node.targets[currTarget].transform.position.z,
-                                                    node.rotationSpeed[currTarget]);
-
-                        currTarget++;
+                                                    node.rotationSpeed[++currTarget]);
                     }
 
                     break;
