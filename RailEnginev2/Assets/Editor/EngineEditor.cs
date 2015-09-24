@@ -19,15 +19,15 @@ public class EngineEditor :  Editor
 
 	public override void OnInspectorGUI()
 	{
-		//required things for arrays
-		serializedObject.Update ();
-
-		//-------------------------------
-		//Place your custom editor stuffs
-		//serializedObject.waypoints
-		SerializedProperty movementsArray = serializedObject.FindProperty ("movements");
-		SerializedProperty effectsArray = serializedObject.FindProperty ("effects");
-		SerializedProperty facingsArray = serializedObject.FindProperty ("facings");
+//		//required things for arrays
+//		serializedObject.Update ();
+//
+//		//-------------------------------
+//		//Place your custom editor stuffs
+//		//serializedObject.waypoints
+//		SerializedProperty movementsArray = serializedObject.FindProperty ("movements");
+//		SerializedProperty effectsArray = serializedObject.FindProperty ("effects");
+//		SerializedProperty facingsArray = serializedObject.FindProperty ("facings");
 
 
 
@@ -105,6 +105,6 @@ public class EngineEditor :  Editor
 
 
         //required things for arrays
-        serializedObject.ApplyModifiedProperties();
+        //serializedObject.ApplyModifiedProperties();
 	}
 }

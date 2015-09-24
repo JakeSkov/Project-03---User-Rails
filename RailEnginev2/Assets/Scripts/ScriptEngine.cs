@@ -6,7 +6,7 @@ using System.Collections.Generic;
 /*
  * @author Mike Dobson
  * */
-[Serializable]
+//[Serializable]
 public class ScriptEngine : MonoBehaviour {
 
 	public List<ScriptMovements> movements;
@@ -24,7 +24,6 @@ public class ScriptEngine : MonoBehaviour {
         lookAtScript = Camera.main.GetComponent<ScriptLookAtTarget>();
         fadeScript = Camera.main.GetComponent<ScriptScreenFade>();
         splatterScript = Camera.main.GetComponent<ScriptSplatter>();
-
     }
 
 	// Use this for initialization
@@ -124,20 +123,8 @@ public class ScriptEngine : MonoBehaviour {
                     }
                     yield return new WaitForSeconds(effect.effectTime);
                     break;
-                case EffectTypes.FADE:
-                    if(effect.imageScale != 0)
-                    {
-                        splatterScript.Activate(effect.effectTime, effect.fadeInTime, effect.fadeOutTime, effect.imageScale);
-                    }
-                    else if(effect.imageScale == 0)
-                    {
-                        splatterScript.Activate(effect.effectTime, effect.fadeInTime, effect.fadeOutTime);
-                    }
-                    else
-                    {
-                        splatterScript.Activate();
-                        
-                    }
+                case EffectTypes.FADE:                                     
+					fadeScript.Activate(effect.effectTime, effect.fadeInTime, effect.fadeOutTime);                             
                     yield return new WaitForSeconds(effect.effectTime);
                     break;
                 case EffectTypes.WAIT:
@@ -158,7 +145,7 @@ public class ScriptEngine : MonoBehaviour {
         ScriptLookAtTarget lookScript = Camera.main.GetComponent<ScriptLookAtTarget>();
         foreach (ScriptFacings facing in facings)
         {
-            Debug.Log(facing);
+            //Debug.Log(facing);
             switch (facing.facingType)
             {
                 case FacingTypes.LOOKAT:
@@ -272,7 +259,9 @@ public class ScriptEngine : MonoBehaviour {
 
     void OnDrawGizmos()
     {
-        Vector3 lineStarting = transform.position;
+        GameObject start = GameObject.FindGameObjectWithTag("Start");
+        Vector3 lineStarting = start.transform.position;
+        
         foreach(ScriptMovements move in movements)
         {
             switch(move.moveType)
@@ -286,7 +275,7 @@ public class ScriptEngine : MonoBehaviour {
                     }
                     else
                     {
-                        Debug.Log("Missing Element in " + move.moveType + " waypoint");
+                        //Debug.Log("Missing Element in " + move.moveType + " waypoint");
                     }
                     break;
                 case MovementTypes.WAIT:
@@ -297,7 +286,7 @@ public class ScriptEngine : MonoBehaviour {
                     }
                     else
                     {
-                        Debug.Log("Missing Element in " + move.moveType + " waypoint");
+                        //Debug.Log("Missing Element in " + move.moveType + " waypoint");
                     }
                     break;
                 case MovementTypes.BEZIER:
@@ -315,7 +304,7 @@ public class ScriptEngine : MonoBehaviour {
                     }
                     else
                     {
-                        Debug.Log("Missing Element in " + move.moveType + " waypoint");
+                        //Debug.Log("Missing Element in " + move.moveType + " waypoint");
 
                     }
                     break;

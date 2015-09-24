@@ -11,14 +11,14 @@ public class ScriptFacings
     public FacingTypes facingType;
 
     //Loot at target variables
-    public GameObject[] targets;
-	public float[] rotationSpeed;
-	public float[] lockTimes;
+    public GameObject[] targets = new GameObject[1];
+	public float[] rotationSpeed = new float[1];
+	public float[] lockTimes = new float[1];
 
     public float facingTime;
 
     //inspector variables only
     public bool showInEditor = false;
-    public int targetSize;
+    public int targetSize = 0;
 
 }
