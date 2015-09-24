@@ -78,6 +78,9 @@ public class EngineWindowEditor : EditorWindow {
         MovementGUI();
         EffectGUI();
         FacingGUI();
+        #region added to help browsing
+
+
         //----------------------------------
         ////Display block for movement
         ////Movement Square
@@ -103,7 +106,7 @@ public class EngineWindowEditor : EditorWindow {
         //offsetX += 10f;
         //offsetY += DISPLAY_DIF;
         //EditorGUI.LabelField(windowDisplay, "Movement " + (movementFocus + 1));
-        
+
         ////movement type
         //windowDisplay = new Rect(offsetX, offsetY, 100f, DISPLAY_HEIGHT);
         //offsetX += 100f;
@@ -112,7 +115,7 @@ public class EngineWindowEditor : EditorWindow {
         //offsetY += DISPLAY_DIF;
         //offsetX = 15f;
         //movements[movementFocus].moveType = (MovementTypes)EditorGUI.EnumPopup(windowDisplay, movements[movementFocus].moveType);
-        
+
 
         //switch(movements[movementFocus].moveType)
         //{
@@ -272,7 +275,7 @@ public class EngineWindowEditor : EditorWindow {
         //offsetY += DISPLAY_DIF;
         //offsetX = 280f;
         //effects[effectFocus].effectType = (EffectTypes)EditorGUI.EnumPopup(windowDisplay, effects[effectFocus].effectType);
-        
+
         ////switch on type
         //switch(effects[effectFocus].effectType)
         //{
@@ -568,7 +571,7 @@ public class EngineWindowEditor : EditorWindow {
         //        //windowDisplay = new Rect(offsetX, offsetY, 70, DISPLAY_HEIGHT);
         //        //offsetY += DISPLAY_DIF;
         //        //offsetX = 540f;
-                
+
         //        windowDisplay = new Rect(offsetX, offsetY, ELEMENT_DISPLAY, DISPLAY_HEIGHT);
         //        if(GUI.Button(windowDisplay, "Edit Targets"))
         //        {
@@ -640,6 +643,7 @@ public class EngineWindowEditor : EditorWindow {
         //    }
         //}
         //GUI.color = Color.white;
+        #endregion
     }
 
     void MovementGUI()
@@ -1146,6 +1150,14 @@ public class EngineWindowEditor : EditorWindow {
                 offsetY = 120f;
                 break;
             case FacingTypes.FREELOOK:
+                windowDisplay = new Rect(offsetX, offsetY, 130f, DISPLAY_HEIGHT);
+                offsetX += 130f;
+                EditorGUI.LabelField(windowDisplay, "Time for freelook");
+                windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
+                offsetX += 40f;
+                facings[facingFocus].facingTime = EditorGUI.FloatField(windowDisplay, facings[facingFocus].facingTime);
+                windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
+                EditorGUI.LabelField(windowDisplay, "secs");
                 offsetY = 120f;
                 break;
             case FacingTypes.WAIT:
