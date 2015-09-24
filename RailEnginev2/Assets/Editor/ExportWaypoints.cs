@@ -171,16 +171,18 @@ public class ExportWaypoints {
             waypoints.Add(nodeString);
         }
 
-        using (StreamWriter sw = new StreamWriter(path)) {
+        using (StreamWriter sw = new StreamWriter(path + "/"+ level + ".txt")) {
             sw.WriteLine(level);
             sw.WriteLine(DateTime.Now);
             sw.WriteLine(author);
             foreach (string s in waypoints) {
                 sw.WriteLine(s);
             }
+            
         }
 
-        
+        AssetDatabase.Refresh();
+        EditorUtility.DisplayDialog("Success", "file build successful", "ok");
     }
 
 }

@@ -12,12 +12,15 @@ using UnityEditor;
 public class ExportWindow : EditorWindow {
     #region Fields
 
+    string name, author;
     #endregion
 
     void OnGUI() {
         EditorGUILayout.LabelField("Level Information");
-        string name = EditorGUILayout.TextField("enter Level name");
-        string author = EditorGUILayout.TextField( "enter author name" );
+        EditorGUILayout.LabelField("Level Name");
+        name = EditorGUILayout.TextField(name);
+        EditorGUILayout.LabelField( "Author Name" );
+        author = EditorGUILayout.TextField(author);
         if (GUILayout.Button("Export")) {
             ExportWaypoints.Export(author, name);
         }
