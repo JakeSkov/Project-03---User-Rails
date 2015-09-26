@@ -795,7 +795,7 @@ MonoBehaviour:
   facings:
   - facingType: 0
     targets:
-    - {fileID: 0}
+    - {fileID: 1385696184}
     rotationSpeed:
     - 0
     - 0
