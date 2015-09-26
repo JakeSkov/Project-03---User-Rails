@@ -14,6 +14,7 @@ public class ScriptFacings
     public GameObject[] targets = new GameObject[1];
 	public float[] rotationSpeed = new float[1];
 	public float[] lockTimes = new float[1];
+    public bool cameraMoveOnly = true;
 
     public float facingTime;
 

@@ -183,18 +183,28 @@ public class ScriptModSupport : MonoBehaviour
                                 //Look At waypoint spawning Code
                                 tempFacing = new ScriptFacings();
 							tempFacing.facingType = (FacingTypes)System.Enum.Parse(typeof(FacingTypes), words[0].ToUpper());
+                                //@ mike
+                            if(words[1].ToLower() == "false")
+                                {
+                                    tempFacing.cameraMoveOnly = false;
+                                }
+                                else
+                                {
+                                    tempFacing.cameraMoveOnly = true;
+                                }
+                            //end @ mike
 							System.Collections.Generic.List<float> tempRotationSpeed = new System.Collections.Generic.List<float>(0);
 							System.Collections.Generic.List<float> tempLockTimes = new System.Collections.Generic.List<float>(0);
 							System.Collections.Generic.List<GameObject> tempTargets = new System.Collections.Generic.List<GameObject>(0);
-                                for (int i = 1; i < words.Length; i++ )
+                                for (int i = 2; i < words.Length; i++ )
                                 {
-                                    if (i % 3 == 1)
+                                    if (i % 3 == 2)
                                     {
 	                                    
 										tempRotationSpeed.Add (System.Convert.ToSingle(words[i]));
 	                                	
 									}
-                                    else if(i % 3 == 2)
+                                    else if(i % 3 == 0)
                                     {
 									    tempLockTimes.Add (System.Convert.ToSingle(words[i]));
 									}
@@ -224,6 +234,7 @@ public class ScriptModSupport : MonoBehaviour
 							{
 								tempFacing.targets[i] = tempTargets[i];
 							}
+                            
                                 tempFacings.Add(tempFacing);
                                 break;
                             //case FacingTypes.LOOKCHAIN:
@@ -282,6 +293,10 @@ public class ScriptModSupport : MonoBehaviour
                                 break;
                             case FacingTypes.FREELOOK:
                                 //Free look for the camera
+                                tempFacing = new ScriptFacings();
+                                tempFacing.facingType = FacingTypes.FREELOOK;
+                                tempFacing.facingTime = System.Convert.ToSingle(words[1]);
+                                tempFacings.Add(tempFacing);
                                 break;
                                 //end @ mike
                         }
