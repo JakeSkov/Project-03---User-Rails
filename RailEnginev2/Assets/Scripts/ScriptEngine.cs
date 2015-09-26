@@ -14,14 +14,16 @@ public class ScriptEngine : MonoBehaviour {
     public List<ScriptEffects> effects;
 
     public ScriptCameraShake cameraShakeScript;
-    public ScriptLookAtTarget lookAtScript;
+    public ScriptLookAtTarget cameraLookAtScript;
+    public ScriptLookAtTarget playerLookAtScript;
     public ScriptScreenFade fadeScript;
     public ScriptSplatter splatterScript;
 
     void Awake()
     {
+        playerLookAtScript = this.gameObject.GetComponent<ScriptLookAtTarget>();
         cameraShakeScript = Camera.main.GetComponent<ScriptCameraShake>();
-        lookAtScript = Camera.main.GetComponent<ScriptLookAtTarget>();
+        cameraLookAtScript = Camera.main.GetComponent<ScriptLookAtTarget>();
         fadeScript = Camera.main.GetComponent<ScriptScreenFade>();
         splatterScript = Camera.main.GetComponent<ScriptSplatter>();
     }
@@ -149,9 +151,15 @@ public class ScriptEngine : MonoBehaviour {
             switch (facing.facingType)
             {
                 case FacingTypes.LOOKAT:
-                    
-                        //Do the facing action
-                        lookAtScript.Activate(facing.rotationSpeed, facing.targets, facing.lockTimes);
+                    //Do the facing action
+                    if(facing.cameraMoveOnly)
+                    {
+                        cameraLookAtScript.Activate(facing.rotationSpeed, facing.targets, facing.lockTimes);
+                    }
+                    else
+                    {
+                        playerLookAtScript.Activate(facing.rotationSpeed, facing.targets, facing.lockTimes);
+                    }
                         //Wait for the specified amount of time on the facing waypoint
                         yield return new WaitForSeconds(facing.rotationSpeed[0] + facing.rotationSpeed[1] + facing.lockTimes[0]);
                     
@@ -163,9 +171,17 @@ public class ScriptEngine : MonoBehaviour {
                     
                     break;
                 case FacingTypes.LOOKCHAIN:
-                    
-                        //Do the facing action
-                        lookAtScript.Activate(facing.rotationSpeed, facing.targets, facing.lockTimes);
+
+                    //Do the facing action
+                    if(facing.cameraMoveOnly)
+                    {
+                        cameraLookAtScript.Activate(facing.rotationSpeed, facing.targets, facing.lockTimes);
+                    }
+                    else
+                    {
+                        playerLookAtScript.Activate(facing.rotationSpeed, facing.targets, facing.lockTimes);
+                    }
+
                         //Wait for the specified amount of time on the facing waypoint
                         float waitTime = 0;
                         for (int i = 0; i < facing.targets.Length; i++)

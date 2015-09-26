@@ -656,15 +656,15 @@ public class EngineWindowEditor : EditorWindow {
         Drawing.DrawLine(movementPoint1, movementPoint2, Color.black, 1f, true);
         //right
         Vector2 movementPoint3 = new Vector2(229, 8);
-        Vector2 movementPoint4 = new Vector2(229, 195);
+        Vector2 movementPoint4 = new Vector2(229, 215);
         Drawing.DrawLine(movementPoint3, movementPoint4, Color.black, 1f, true);
         //bottom
-        Vector2 movementPoint5 = new Vector2(-110, 193);
-        Vector2 movementPoint6 = new Vector2(117, 193);
+        Vector2 movementPoint5 = new Vector2(-110, 213);
+        Vector2 movementPoint6 = new Vector2(117, 213);
         Drawing.DrawLine(movementPoint5, movementPoint6, Color.black, 1f, true);
         //left
         Vector2 movementPoint7 = new Vector2(4, 8);
-        Vector2 movementPoint8 = new Vector2(4, 195);
+        Vector2 movementPoint8 = new Vector2(4, 215);
         Drawing.DrawLine(movementPoint7, movementPoint8, Color.black, 1f, true);
 
         //Movement element info
@@ -711,7 +711,7 @@ public class EngineWindowEditor : EditorWindow {
                 offsetX += 80f;
                 EditorGUI.LabelField(windowDisplay, "End Target");
                 windowDisplay = new Rect(offsetX, offsetY, 135f, DISPLAY_HEIGHT);
-                offsetY = 120f;
+                offsetY = 140f;
                 offsetX = 15f;
                 movements[movementFocus].endWaypoint = (GameObject)EditorGUI.ObjectField(windowDisplay, GUIContent.none, movements[movementFocus].endWaypoint, typeof(GameObject));
                 break;
@@ -732,7 +732,7 @@ public class EngineWindowEditor : EditorWindow {
                 offsetX += 80f;
                 EditorGUI.LabelField(windowDisplay, "End Target");
                 windowDisplay = new Rect(offsetX, offsetY, 130f, DISPLAY_HEIGHT);
-                offsetY = 120f;
+                offsetY = 140f;
                 offsetX = 15f;
                 movements[movementFocus].endWaypoint = (GameObject)EditorGUI.ObjectField(windowDisplay, GUIContent.none, movements[movementFocus].endWaypoint, typeof(GameObject));
                 break;
@@ -748,7 +748,7 @@ public class EngineWindowEditor : EditorWindow {
                 offsetY += DISPLAY_DIF;
                 offsetX = 15f;
                 EditorGUI.LabelField(windowDisplay, "secs");
-                offsetY = 120f;
+                offsetY = 140f;
                 offsetX = 15f;
                 break;
         }
@@ -817,15 +817,15 @@ public class EngineWindowEditor : EditorWindow {
         Drawing.DrawLine(effectsPoint1, effectsPoint2, Color.black, 1f, true);
         //left
         Vector2 effectsPoint3 = new Vector2(268, 8);
-        Vector2 effectsPoint4 = new Vector2(268, 195);
+        Vector2 effectsPoint4 = new Vector2(268, 215);
         Drawing.DrawLine(effectsPoint3, effectsPoint4, Color.black, 1f, true);
         //bottom
-        Vector2 effectsPoint5 = new Vector2(154, 193);
-        Vector2 effectsPoint6 = new Vector2(380, 193);
+        Vector2 effectsPoint5 = new Vector2(154, 213);
+        Vector2 effectsPoint6 = new Vector2(380, 213);
         Drawing.DrawLine(effectsPoint5, effectsPoint6, Color.black, 1f, true);
         //Right
         Vector2 effectsPoint7 = new Vector2(491, 8);
-        Vector2 effectsPoint8 = new Vector2(491, 195);
+        Vector2 effectsPoint8 = new Vector2(491, 215);
         Drawing.DrawLine(effectsPoint7, effectsPoint8, Color.black, 1f, true);
         offsetX = 270f;
         offsetY = 10f;
@@ -882,7 +882,7 @@ public class EngineWindowEditor : EditorWindow {
                 windowDisplay = new Rect(offsetX, offsetY, 50f, DISPLAY_HEIGHT);
                 offsetY += DISPLAY_DIF;
                 effects[effectFocus].imageScale = EditorGUI.FloatField(windowDisplay, effects[effectFocus].imageScale);
-                offsetY = 120f;
+                offsetY = 140f;
                 break;
             case EffectTypes.FADE:
                 //time
@@ -911,7 +911,7 @@ public class EngineWindowEditor : EditorWindow {
                 effects[effectFocus].fadeOutTime = EditorGUI.FloatField(windowDisplay, effects[effectFocus].fadeOutTime);
                 windowDisplay = new Rect(offsetX, offsetY, 30f, DISPLAY_HEIGHT);
                 EditorGUI.LabelField(windowDisplay, "secs");
-                offsetY = 120f;
+                offsetY = 140f;
                 offsetX = 280f;
                 break;
             case EffectTypes.SHAKE:
@@ -931,7 +931,7 @@ public class EngineWindowEditor : EditorWindow {
                 offsetX += 115f;
                 EditorGUI.LabelField(windowDisplay, "Magnitude of shake");
                 windowDisplay = new Rect(offsetX, offsetY, 85f, DISPLAY_HEIGHT);
-                offsetY = 120f;
+                offsetY = 140f;
                 effects[effectFocus].magnitude = EditorGUI.FloatField(windowDisplay, effects[effectFocus].magnitude);
                 //offsetX 
                 break;
@@ -947,7 +947,7 @@ public class EngineWindowEditor : EditorWindow {
                 offsetY += DISPLAY_DIF;
                 offsetX = 280f;
                 EditorGUI.LabelField(windowDisplay, "secs");
-                offsetY = 120f;
+                offsetY = 140f;
                 break;
         }
         //Effects Buttons Display
@@ -1012,15 +1012,15 @@ public class EngineWindowEditor : EditorWindow {
         Drawing.DrawLine(facingsPoint1, facingsPoint2, Color.black, 1f, true);
         //left
         Vector2 facingsPoint3 = new Vector2(524, 8);
-        Vector2 facingsPoint4 = new Vector2(524, 195);
+        Vector2 facingsPoint4 = new Vector2(524, 215);
         Drawing.DrawLine(facingsPoint3, facingsPoint4, Color.black, 1f, true);
         //bottom
-        Vector2 facingsPoint5 = new Vector2(412, 193);
-        Vector2 facingsPoint6 = new Vector2(634, 193);
+        Vector2 facingsPoint5 = new Vector2(412, 213);
+        Vector2 facingsPoint6 = new Vector2(634, 213);
         Drawing.DrawLine(facingsPoint5, facingsPoint6, Color.black, 1f, true);
         //right
         Vector2 facingsPoint7 = new Vector2(744, 8);
-        Vector2 facingsPoint8 = new Vector2(744, 195);
+        Vector2 facingsPoint8 = new Vector2(744, 215);
         Drawing.DrawLine(facingsPoint7, facingsPoint8, Color.black, 1f, true);
 
 
@@ -1062,7 +1062,7 @@ public class EngineWindowEditor : EditorWindow {
                 windowDisplay = new Rect(offsetX, offsetY, 110f, DISPLAY_HEIGHT);
                 offsetX = 535;
                 offsetY += DISPLAY_DIF;
-                facings[facingFocus].targets[0] = (GameObject)EditorGUI.ObjectField(windowDisplay, GUIContent.none, facings[facingFocus].targets[0], typeof(GameObject));
+                facings[facingFocus].targets[0] = (GameObject)EditorGUI.ObjectField(windowDisplay, GUIContent.none, facings[facingFocus].targets[0], typeof(GameObject), true);
                 //facing time
                 windowDisplay = new Rect(offsetX, offsetY, 125f, DISPLAY_HEIGHT);
                 offsetX += 125f;
@@ -1096,7 +1096,13 @@ public class EngineWindowEditor : EditorWindow {
                 offsetX = 535;
                 offsetY += DISPLAY_DIF;
                 EditorGUI.LabelField(windowDisplay, "secs");
-                offsetY = 120f;
+                windowDisplay = new Rect(offsetX, offsetY, 150f, DISPLAY_HEIGHT);
+                offsetX += 150f;
+                EditorGUI.LabelField(windowDisplay, "Rotate Camera Only");
+                windowDisplay = new Rect(offsetX, offsetY, 25f, DISPLAY_HEIGHT);
+                offsetX = 535;
+                facings[facingFocus].cameraMoveOnly = EditorGUI.Toggle(windowDisplay, facings[facingFocus].cameraMoveOnly);
+                offsetY = 140f;
                 break;
             case FacingTypes.LOOKCHAIN:
                 //amount of targets
@@ -1107,6 +1113,13 @@ public class EngineWindowEditor : EditorWindow {
                 offsetX = 535f;
                 offsetY += DISPLAY_DIF;
                 facings[facingFocus].targetSize = EditorGUI.IntField(windowDisplay, facings[facingFocus].targetSize);
+                windowDisplay = new Rect(offsetX, offsetY, 150f, DISPLAY_HEIGHT);
+                offsetX += 150f;
+                EditorGUI.LabelField(windowDisplay, "Rotate Camera Only");
+                windowDisplay = new Rect(offsetX, offsetY, 25f, DISPLAY_HEIGHT);
+                offsetX = 535f;
+                offsetY += DISPLAY_DIF;
+                facings[facingFocus].cameraMoveOnly = EditorGUI.Toggle(windowDisplay, facings[facingFocus].cameraMoveOnly);
                 if (facings[facingFocus].targets.Length != facings[facingFocus].targetSize)
                 {
                     facings[facingFocus].targets = new GameObject[facings[facingFocus].targetSize];
@@ -1147,7 +1160,7 @@ public class EngineWindowEditor : EditorWindow {
                 {
                     LookChainWindowEditor.Init(facingFocus);
                 }
-                offsetY = 120f;
+                offsetY = 140f;
                 break;
             case FacingTypes.FREELOOK:
                 windowDisplay = new Rect(offsetX, offsetY, 130f, DISPLAY_HEIGHT);
@@ -1158,7 +1171,7 @@ public class EngineWindowEditor : EditorWindow {
                 facings[facingFocus].facingTime = EditorGUI.FloatField(windowDisplay, facings[facingFocus].facingTime);
                 windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
                 EditorGUI.LabelField(windowDisplay, "secs");
-                offsetY = 120f;
+                offsetY = 140f;
                 break;
             case FacingTypes.WAIT:
                 //time
@@ -1167,12 +1180,12 @@ public class EngineWindowEditor : EditorWindow {
                 EditorGUI.LabelField(windowDisplay, "Time until next facing");
                 windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
                 facings[facingFocus].facingTime = EditorGUI.FloatField(windowDisplay, facings[facingFocus].facingTime);
-                offsetY = 120f;
+                offsetY = 140f;
                 break;
 
         }
         //Facings Buttons Display
-        offsetY = 140;
+        offsetY = 160;
         offsetX = 570f;
         windowDisplay = new Rect(offsetX, offsetY, 40f, DISPLAY_HEIGHT);
         offsetX += 40f;
