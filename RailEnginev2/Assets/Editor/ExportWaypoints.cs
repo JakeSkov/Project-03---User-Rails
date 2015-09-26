@@ -100,19 +100,22 @@ public class ExportWaypoints {
                 case FacingTypes.LOOKAT:
 
                     //LOOKAT takes a look to time, a lock time, a look target, and a return time.
-                    nodeString += string.Format("LOOKAT {0} {1} {2},{3},{4} {5}",
+                    Debug.Log("");
+
+                    nodeString += string.Format("LOOKAT {6} {0} {1} {2},{3},{4} {5}",
                                                 node.rotationSpeed[0],
                                                 node.lockTimes[0],
                                                 node.targets[0].transform.position.x,
                                                 node.targets[0].transform.position.y,
                                                 node.targets[0].transform.position.z,
-                                                node.rotationSpeed[1]);
+                                                node.rotationSpeed[1],
+                                                node.cameraMoveOnly);
 
                     break;
                 case FacingTypes.LOOKCHAIN:
 
                     //LOOKCHAIN takes two times per target, an unlimited number of targets, and a return time at the end.
-                    nodeString += string.Format("LOOKCHAIN {0}", node.rotationSpeed[0] );
+                    nodeString += string.Format("LOOKCHAIN {0} {1}",node.cameraMoveOnly, node.rotationSpeed[0] );
 
                     int currTarget = 0;
 
