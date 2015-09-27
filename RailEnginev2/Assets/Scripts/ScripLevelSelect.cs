@@ -8,6 +8,7 @@ public class ScripLevelSelect : MonoBehaviour
     private Canvas[] levelPages;
     private Button[] buttons;
     private TextAsset[] levelText;
+    
 
     public static Button[] levelButton = new Button[8];
 
