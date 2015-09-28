@@ -8,7 +8,7 @@ using System.IO;
 /// </summary>
 public class ScriptModSupport : MonoBehaviour
 {
-
+    public static string filePath;
     public GameObject movementWaypoint;
     public GameObject facingWaypoint;
     public GameObject effectWaypoint;
@@ -59,10 +59,10 @@ public class ScriptModSupport : MonoBehaviour
             }
         }
 
-        modFile = new FileInfo(Application.dataPath + "/waypoints.txt");
+        modFile = new FileInfo(filePath);
         if (!modFile.Exists)
         {
-            File.WriteAllText(Application.dataPath + "/waypoints.txt", defaultModFileText);
+            File.WriteAllText(filePath, defaultModFileText);
         }
         else
         {

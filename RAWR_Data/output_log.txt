@@ -1,0 +1,152 @@
+Initialize engine version: 5.1.2f1 (afd2369b692a)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon(TM) HD 6620G (ID=0x9641)
+    Vendor:   ATI
+    VRAM:     495 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.136 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Skov\Desktop\Repos\Project-03---User-Rails\RAWR_Data\Managed\System.dll (this message is harmless)
+8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+8
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[System.String].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ScriptLevelButton.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[System.String].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ScriptLevelButton.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[System.String].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ScriptLevelButton.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ScriptLevelButton.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[System.String].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ScriptLevelButton.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[System.String].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ScriptLevelButton.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[System.String].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ScriptLevelButton.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[System.String].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ScriptLevelButton.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+ArgumentOutOfRangeException: Argument is out of range.
+Parameter name: index
+  at System.Collections.Generic.List`1[System.String].get_Item (Int32 index) [0x00000] in <filename unknown>:0 
+  at ScriptLevelButton.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 15f8 -> priority: 1 
+test level.txt
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
