@@ -194,7 +194,8 @@ public class ScriptEngine : MonoBehaviour {
                     
                     break;
                 case FacingTypes.FREELOOK:
-
+                    float rotateSpeed = 5f;
+                    transform.Rotate(new Vector3(Input.mousePosition.x, Input.mousePosition.y), rotateSpeed, Space.Self);
                     break;
                 default:
                     ScriptErrorLogging.logError("Invalid movement type!");
